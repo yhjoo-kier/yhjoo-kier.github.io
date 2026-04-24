@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-contact">
+      <p class="footer-name">{{ site.author }}</p>
+      <p class="footer-tag">{{ site.tagline }}</p>
+    </div>
+    <ul class="footer-links">
+      {% if site.social.email %}
+        <li><a href="mailto:{{ site.social.email }}">Email</a></li>
+      {% endif %}
+      {% if site.social.github %}
+        <li><a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a></li>
+      {% endif %}
+      {% if site.social.scholar %}
+        <li><a href="{{ site.social.scholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
+      {% endif %}
+      {% if site.social.orcid %}
+        <li><a href="https://orcid.org/{{ site.social.orcid }}" target="_blank" rel="noopener">ORCID</a></li>
+      {% endif %}
+      {% if site.social.linkedin %}
+        <li><a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      {% endif %}
+    </ul>
+    <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ site.author }}. Built with Jekyll.</p>
+  </div>
+</footer>

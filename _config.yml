@@ -1,0 +1,49 @@
+# Site Settings
+title: "Younghwan"
+tagline: "Researcher"
+description: "Personal academic website of Younghwan — research, publications, and CV."
+author: "Younghwan"
+email: "goidboy255@gmail.com"
+
+# GitHub Pages
+url: "https://yhjoo-kier.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Navigation
+nav:
+  - title: "Home"
+    url: "/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "CV"
+    url: "/cv/"
+
+# Social / Contact
+social:
+  github: "yhjoo-kier"
+  email: "goidboy255@gmail.com"
+  # Add when available:
+  # scholar: ""
+  # orcid: ""
+  # linkedin: ""
+  # twitter: ""
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
