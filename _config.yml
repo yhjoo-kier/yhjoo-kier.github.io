@@ -1,9 +1,9 @@
 # Site Settings
-title: "Younghwan"
-tagline: "Researcher"
-description: "Personal academic website of Younghwan — research, publications, and CV."
-author: "Younghwan"
-email: "goidboy255@gmail.com"
+title: "Younghwan Joo"
+tagline: "Senior Researcher · KIER"
+description: "Younghwan Joo (주영환) — Senior Researcher at Korea Institute of Energy Research (KIER). Research on topology optimization, heat transfer, and machine learning for engineering design."
+author: "Younghwan Joo"
+email: "yhjoo@kier.re.kr"
 
 # GitHub Pages
 url: "https://yhjoo-kier.github.io"
@@ -35,12 +35,9 @@ nav:
 # Social / Contact
 social:
   github: "yhjoo-kier"
-  email: "goidboy255@gmail.com"
-  # Add when available:
-  # scholar: ""
-  # orcid: ""
-  # linkedin: ""
-  # twitter: ""
+  email: "yhjoo@kier.re.kr"
+  scholar: "https://scholar.google.com/citations?user=2lOiXO4AAAAJ&hl=ko"
+  orcid: "0000-0002-4819-9341"
 
 # Plugins supported by GitHub Pages
 plugins:
