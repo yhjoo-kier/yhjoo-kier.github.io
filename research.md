@@ -7,48 +7,30 @@ permalink: /research/
 
 ## Overview
 
-My current research focuses on **energy efficiency in manufacturing processes** and **AI-based operation of industrial energy systems**. I combine engineering modeling with machine-learning techniques to reduce energy consumption across the life cycle of industrial manufacturing. Earlier work — still ongoing — addresses the optimal design of thermal components and the acceleration of engineering simulations with deep learning.
+My research sits at the intersection of thermal-fluid engineering, machine learning, and industrial energy systems. I develop methods that span the full **design–simulate–operate** cycle of energy-consuming equipment: optimizing component geometry, accelerating the simulations needed to evaluate them, and learning control policies that operate the resulting systems efficiently in the field. The three areas below organize this work by methodological focus rather than by application; in practice, most projects draw on more than one area.
 
 ---
 
 ## Research Areas
 
-### 1. Energy Efficiency in Manufacturing Processes *(current focus)*
+### 1. Thermal-fluid systems engineering
 
-Technologies that reduce energy consumption across the life cycle of industrial manufacturing, with a particular emphasis on **battery manufacturing** and other energy-intensive processes such as drying and casting. The work spans process modeling, equipment-level optimization, life-cycle energy analysis, and energy-based key performance indicators for industry.
+Design and operation of thermal-fluid systems across scales — from individual components to building-scale energy plants. Topology optimization is used to generate non-intuitive geometries for heat sinks and heat exchangers; digital-twin models reproduce system dynamics under realistic boundary conditions; and AI-based controllers search for energy-optimal operating points without violating product-quality or safety constraints. Current work emphasizes the **co-design of equipment and supervisory control** for HVAC and paint-booth air-conditioning systems, where component- and system-level decisions are tightly coupled.
 
-Representative papers: *Thermal Science and Engineering Progress* (2026), *Energy* (2024, 2025), *Journal of Cleaner Production* (2022), *Journal of Dairy Science* (2024).
+**Keywords:** topology optimization · heat sinks · heat exchangers · HVAC · paint-booth air-conditioning · digital twin · AI-based control · natural and forced convection.
 
-### 2. AI Agents for Industrial Energy Operation *(current focus)*
+### 2. AI/ML for engineering simulation
 
-Developing AI agents that **autonomously operate** industrial facilities and energy-consuming equipment for energy-efficient operation, while maintaining product quality and process constraints. Techniques include deep reinforcement learning and data-driven control applied to manufacturing equipment and building-scale industrial systems.
+Machine-learning methods that accelerate or replace conventional engineering simulations. The work covers neural operators that learn solution maps over function spaces (**GINO**, **PIGANO**), graph neural networks that accelerate convergence of iterative topology-optimization solvers, deep-learned finite elements that embed learned shape functions, surrogate models for expensive multi-physics analyses, and reinforcement-learning agents that explore large design spaces. The ongoing focus is on **operator-learning approaches that generalize across geometries and boundary conditions**, enabling design and control loops that were previously computationally infeasible.
 
-Representative papers: *International Communications in Heat and Mass Transfer* (2024).
+**Keywords:** neural operators · GINO · PIGANO · graph neural networks · deep-learned finite elements · surrogate modeling · deep reinforcement learning · convergence acceleration.
 
-### 3. Optimal Design of Thermal Systems
+### 3. Industrial energy efficiency
 
-Topology-optimization methods for thermal components — heat sinks, heat exchangers, thermal insulators — under natural convection, forced convection, and multi-physics conditions.
+Energy analysis, modeling, and optimization for energy-intensive manufacturing processes and building energy systems. Measurement-driven energy simulations are constructed for processes such as **electrode drying, steel casting, and food/dairy spray drying**, as well as for HVAC systems at the building scale; from these models, energy-based key performance indicators are derived so that process designs and operating strategies can be compared on a consistent basis. Current efforts target battery-electrode drying lines and industrial HVAC, where transient behavior and load coupling dominate the achievable savings.
 
-Representative papers: *IJHMT* (2015, 2016, 2017, 2018), *IEEE TCPMT* (2021), *EnOp* (2022), *Case Studies in Thermal Engineering* (2023), *Applied Thermal Engineering* (2025).
-
-### 4. Machine Learning for Engineering Design
-
-Machine-learning methods that accelerate conventional numerical workflows — deep-learned finite elements, graph-based convergence acceleration for topology optimization, and deep reinforcement learning for design optimization.
-
-Representative papers: *IEEE Access* (2021), *Engineering Applications of Artificial Intelligence* (2024), *Journal of Mechanical Science and Technology* (2025).
-
-### 5. Heat Transfer Fundamentals
-
-Natural convection, pulsating heat pipes, phase-change materials, and thermoelectric generators — providing the physical foundation for the applied work above.
-
-Representative papers: *IJHMT* (2018), *Energy Conversion and Management* (2018), *Energy* (2023).
+**Keywords:** electrode drying · steel casting · spray drying · HVAC energy modeling · life-cycle energy analysis · energy-based KPIs · manufacturing process simulation.
 
 ---
 
-## Selected Journals
-
-My work has appeared in leading journals in heat transfer, energy, and applied AI, including:
-
-*International Journal of Heat and Mass Transfer* · *Energy* · *Applied Thermal Engineering* · *Engineering Applications of Artificial Intelligence* · *Journal of Cleaner Production* · *IEEE Access* · *IEEE Transactions on Components, Packaging and Manufacturing Technology* · *International Communications in Heat and Mass Transfer* · *Energy Conversion and Management* · *Journal of Mechanical Science and Technology* · *Case Studies in Thermal Engineering* · *Thermal Science and Engineering Progress* · *Journal of Dairy Science*
-
-For the complete list, see the [Publications page]({{ '/publications/' | relative_url }}) or my [Google Scholar profile](https://scholar.google.com/citations?user=2lOiXO4AAAAJ&hl=ko).
+For the full publication record, see the [Publications page]({{ '/publications/' | relative_url }}) or my [Google Scholar profile](https://scholar.google.com/citations?user=2lOiXO4AAAAJ&hl=ko).
