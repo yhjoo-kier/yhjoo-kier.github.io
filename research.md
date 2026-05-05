@@ -15,9 +15,9 @@ My research sits at the intersection of thermal-fluid engineering, machine learn
 
 ### 1. Thermal-fluid systems engineering
 
-Design and operation of thermal-fluid systems across scales — from individual components to building-scale energy plants. Topology optimization is used to generate non-intuitive geometries for heat sinks and heat exchangers; digital-twin models reproduce system dynamics under realistic boundary conditions; and AI-based controllers search for energy-optimal operating points without violating product-quality or safety constraints. Current work emphasizes the **co-design of equipment and supervisory control** for HVAC and paint-booth air-conditioning systems, where component- and system-level decisions are tightly coupled.
+Design and operation of thermal-fluid systems across scales — from individual components to building-scale energy plants. Topology optimization is used to generate non-intuitive geometries for heat sinks and heat exchangers; digital-twin models reproduce system dynamics under realistic boundary conditions; and AI-based controllers search for energy-optimal operating points without violating product-quality or safety constraints. Current work emphasizes the **co-design of equipment and supervisory control** for HVAC and manufacturing-process air-conditioning systems, where component- and system-level decisions are tightly coupled.
 
-**Keywords:** topology optimization · heat sinks · heat exchangers · HVAC · paint-booth air-conditioning · digital twin · AI-based control · natural and forced convection.
+**Keywords:** topology optimization · heat sinks · heat exchangers · HVAC · manufacturing-process air handling · digital twin · AI-based control · natural and forced convection.
 
 ### 2. AI/ML for engineering simulation
 
