@@ -1,56 +1,210 @@
----
-layout: default
-title: "Home"
-description: "Younghwan Joo — Senior Researcher at KIER. Research on energy efficiency of manufacturing processes, industrial AI agents, and optimal design of thermal systems."
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Younghwan Joo &middot; Codesign of Energy Systems</title>
+  <meta name="description" content="Younghwan Joo — Senior Researcher at KIER. Codesign of energy systems: thermal-system design optimization and operational control as a single coupled problem.">
 
-<section class="hero">
-  <div class="hero-avatar" aria-hidden="true">Y</div>
-  <div class="hero-text">
-    <h1>Younghwan Joo</h1>
-    <p class="role">Senior Researcher · Associate Professor</p>
-    <p class="affiliation">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-mark" href="/">
+      <span class="mark-name">Younghwan Joo</span>
+      <span class="mark-sub">Codesign &middot; KIER</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/research/">Research</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/cv/">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <p class="hero-eyebrow">No. 01 &mdash; Senior Researcher, KIER</p>
+    <h1 class="hero-name">Younghwan&nbsp;Joo</h1>
+    <p class="hero-role">Senior Researcher &middot; Associate Professor</p>
+    <p class="hero-affiliation">
       Korea Institute of Energy Research (KIER) &middot;
-      University of Science &amp; Technology (UST)
+      University of Science &amp; Technology (UST). B.S., M.S., Ph.D. in
+      Mechanical Engineering, KAIST.
     </p>
-    <p class="tagline">“Optimal design and AI-driven operation of energy systems.”</p>
+    <p class="hero-tag">Codesign of energy systems</p>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">01</span>Philosophy</div>
+      <div>
+        <p class="lede">
+          Most research optimizes either how a system is built or how it is run.
+          I am interested in doing both at once &mdash; treating design and
+          operation as a single coupled optimization problem. I call this
+          <strong>Codesign</strong>.
+        </p>
+        <p>
+          A heat exchanger that is geometrically optimal under nominal load
+          rarely runs at nominal load. A control policy tuned for an off-the-shelf
+          plant rarely uses the plant's actual degrees of freedom. The two
+          choices &mdash; what to build and how to run it &mdash; are usually
+          made by different people, in sequence, and the seam between them is
+          where most of the achievable energy savings disappear.
+        </p>
+        <p>
+          The work below approaches that seam as the unit of analysis. Equipment
+          geometry, supervisory control, and the model that connects them are
+          designed against the same objective from the start.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="/research/">Read the long form</a>
+          <a class="btn btn-ghost" href="/publications/">Publications</a>
+          <a class="btn btn-ghost" href="mailto:yhjoo@kier.re.kr">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">02</span>Research interests</div>
+      <div>
+        <ol class="tiers">
+          <li>
+            <div>
+              <h3>AI agents for industrial energy control</h3>
+              <p>
+                LLM-based agents that read plant documentation, reason over
+                sensor streams, and drive equipment through an ontology layer
+                down to TCP / UDP and the PLC. The aim is supervisory control
+                that is auditable, constraint-aware, and deployable on real
+                manufacturing lines &mdash; not chatbots over historian data.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Energy efficiency of manufacturing processes</h3>
+              <p>
+                Process-scale modeling and control of energy-intensive
+                operations &mdash; battery electrode drying, industrial HVAC,
+                steel casting. Measurement-driven simulations and energy-based
+                KPIs that let process designs and operating strategies be
+                compared on the same axis.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Codesign of thermal systems</h3>
+              <p>
+                Topology optimization of heat sinks, heat exchangers, and
+                thermal insulators, paired with the operating policy that will
+                run them. Advanced primarily through student supervision; the
+                long-running track that anchors the &ldquo;what to build&rdquo;
+                side of Codesign.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">03</span>Ongoing projects</div>
+      <div>
+        <div class="project-grid">
+          <article class="project">
+            <p class="project-meta"><span class="dot"></span>Active &middot; 2024 &mdash;</p>
+            <h3>LLM-based AI Agent for HVAC Control</h3>
+            <p>
+              Autonomous supervisory control of HVAC for a battery-manufacturing
+              dry room. The agent layer talks to a domain ontology, which talks
+              to PLCs over TCP / UDP. Quality and safety constraints are
+              enforced explicitly; the LLM reasons over deviations, schedules,
+              and operator intent rather than directly closing the loop.
+            </p>
+          </article>
+          <article class="project">
+            <p class="project-meta"><span class="dot"></span>Active &middot; 2023 &mdash;</p>
+            <h3>Digital Twin of a Desiccant Rotor HVAC</h3>
+            <p>
+              Simulink-based digital twin of a desiccant-rotor air-handling
+              system, calibrated against field measurements. Used to evaluate
+              control strategies offline; current results show roughly
+              <strong>20% energy savings</strong> against the as-built
+              operating policy.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">04</span>Open questions</div>
+      <div>
+        <ol class="questions">
+          <li><p>When does codesigning equipment and operation actually beat doing them in sequence &mdash; and how do we know in advance, before the hardware is built?</p></li>
+          <li><p>Can an LLM-based agent be made auditable enough to run an industrial line under hard quality and safety constraints, without humans in the loop on every decision?</p></li>
+          <li><p>What is the right interface between an optimal geometry and the policy that will operate it &mdash; a learned model, a reduced-order surrogate, or something the controller itself updates online?</p></li>
+          <li><p>How much of energy-intensive manufacturing&rsquo;s waste is structural &mdash; baked into how plants are commissioned &mdash; versus operational, and recoverable through better supervisory control?</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">05</span>Contact</div>
+      <div>
+        <dl class="contact-grid">
+          <dt>Email</dt>
+          <dd><a href="mailto:yhjoo@kier.re.kr">yhjoo@kier.re.kr</a></dd>
+          <dt>Affiliation</dt>
+          <dd>Korea Institute of Energy Research (KIER), Daejeon</dd>
+          <dt>ORCID</dt>
+          <dd><a href="https://orcid.org/0000-0002-4819-9341" target="_blank" rel="noopener">0000-0002-4819-9341</a></dd>
+          <dt>Scholar</dt>
+          <dd><a href="https://scholar.google.com/citations?user=2lOiXO4AAAAJ&amp;hl=ko" target="_blank" rel="noopener">Google Scholar profile</a></dd>
+          <dt>GitHub</dt>
+          <dd><a href="https://github.com/yhjoo-kier" target="_blank" rel="noopener">github.com/yhjoo-kier</a></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-mark">Younghwan Joo</p>
+      <p class="footer-tagline">Codesign &middot; KIER &middot; UST</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:yhjoo@kier.re.kr">Email</a></li>
+      <li><a href="https://github.com/yhjoo-kier" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?user=2lOiXO4AAAAJ&amp;hl=ko" target="_blank" rel="noopener">Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-4819-9341" target="_blank" rel="noopener">ORCID</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Younghwan Joo. Korea Institute of Energy Research.</p>
   </div>
-</section>
+</footer>
 
-<section>
-  <h2>About</h2>
-  <p>
-    Senior Researcher at the <strong>Korea Institute of Energy Research (KIER)</strong>,
-    Associate Professor at the <strong>University of Science &amp; Technology (UST)</strong>.
-  </p>
-  <p>
-    B.S., M.S., and Ph.D. in Mechanical Engineering from <strong>KAIST</strong> (2012, 2014, 2017).
-    Previously Senior Researcher at KAERI (2018–2021) and postdoctoral researcher at KAIST (2017–2018).
-  </p>
-
-  <div class="btn-row">
-    <a class="btn" href="{{ '/cv/' | relative_url }}">View CV</a>
-    <a class="btn btn-outline" href="{{ '/publications/' | relative_url }}">Publications</a>
-    <a class="btn btn-outline" href="mailto:{{ site.social.email }}">Contact</a>
-  </div>
-</section>
-
-<section>
-  <h2>Research Interests</h2>
-  <ul>
-    <li><strong>Energy efficiency of manufacturing processes</strong> — battery manufacturing and other energy-intensive processes such as drying and casting; process modeling, equipment-level optimization, and life-cycle energy analysis.</li>
-    <li><strong>AI agents for industrial energy operation</strong> — autonomous operation of industrial facilities and energy-consuming equipment to reduce energy use while preserving product quality.</li>
-    <li><strong>Optimal design of thermal systems</strong> — topology optimization of heat sinks, heat exchangers, and thermal insulators under natural/forced convection and multi-physics conditions.</li>
-    <li><strong>Machine learning for engineering design</strong> — deep-learned finite elements, graph-based convergence acceleration, and reinforcement learning for simulation and design workflows.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Contact</h2>
-  <p>
-    <strong>Email:</strong> <a href="mailto:yhjoo@kier.re.kr">yhjoo@kier.re.kr</a><br>
-    <strong>Affiliation:</strong> Korea Institute of Energy Research (KIER), Daejeon, Republic of Korea<br>
-    <strong>ORCID:</strong> <a href="https://orcid.org/0000-0002-4819-9341" target="_blank" rel="noopener">0000-0002-4819-9341</a><br>
-    <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=2lOiXO4AAAAJ&hl=ko" target="_blank" rel="noopener">Profile</a>
-  </p>
-</section>
+</body>
+</html>

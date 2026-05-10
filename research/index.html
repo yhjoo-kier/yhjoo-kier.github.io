@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research &middot; Younghwan Joo</title>
+  <meta name="description" content="Codesign of energy systems — the thesis, two research tracks (design optimization and operational control), and the projects where they meet.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-mark" href="/">
+      <span class="mark-name">Younghwan Joo</span>
+      <span class="mark-sub">Codesign &middot; KIER</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/research/" class="active">Research</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/cv/">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <header class="page-header">
+    <p class="eyebrow"><span class="num">02</span>Research</p>
+    <h1 class="page-title">Codesign of Energy Systems</h1>
+    <p class="page-subtitle">A long-form view of the thesis, the two tracks, and the projects where they meet.</p>
+  </header>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">01</span>The Codesign thesis</div>
+      <div>
+        <p class="lede">
+          Equipment design and operational control are usually treated as two
+          problems. They are one problem.
+        </p>
+        <p>
+          A heat exchanger is geometrically optimal under a single nominal
+          load. The plant it sits in almost never runs at that load. Most
+          industrial energy systems spend their lives somewhere between
+          off-design points, and the supervisory layer above the equipment
+          spends its life compensating for choices that were locked in years
+          earlier &mdash; usually by a different team, often working from a
+          single steady-state spec sheet.
+        </p>
+        <p>
+          The seam between &ldquo;what to build&rdquo; and &ldquo;how to run
+          it&rdquo; is where most of the achievable energy savings disappear.
+          A topology-optimized geometry can be undone by a poorly tuned
+          controller. A skilled MPC can only ever recover a fraction of what a
+          mis-sized component leaves on the table. Treating either problem in
+          isolation is locally rational and globally wasteful.
+        </p>
+        <p>
+          <strong>Codesign</strong> is the alternative I work on:
+          equipment geometry, supervisory control policy, and the model that
+          links them, optimized against the same objective from the start. It
+          is not a single algorithm &mdash; it is a stance about where the
+          design boundary should sit. The two research tracks below are how
+          I explore it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">02</span>Track A &mdash; Design optimization</div>
+      <div>
+        <h2>What to build</h2>
+        <p>
+          Track A is the long-running, geometry-side line of work: topology
+          optimization of thermal systems &mdash; heat sinks, heat exchangers,
+          thermal insulators &mdash; under natural and forced convection,
+          conjugate heat transfer, and multi-objective thermal-structural
+          coupling. The published record on this track goes back to 2015 and
+          is the foundation of the lab&rsquo;s thermal-design competence.
+        </p>
+        <p>
+          This track is now advanced primarily through <strong>student
+          collaboration</strong>. New geometric explorations &mdash; aerogel
+          heat sinks, dual-fluid printed-circuit heat exchangers, thermoelectric
+          modules with phase-change buffers &mdash; are led by graduate students
+          and supervised against the larger Codesign objective: not
+          &ldquo;what is the lowest thermal resistance&rdquo;, but
+          &ldquo;what geometry leaves the operating policy the most room to
+          run efficiently across the realistic load distribution.&rdquo;
+        </p>
+        <p>
+          Methodologically the track contributes the optimization side of the
+          program: density-based topology optimization, shape-dependent
+          convection modeling, deep-learned finite elements, and graph-based
+          convergence acceleration for unstructured meshes. The
+          <a href="/publications/">publications</a> page lists this work under
+          <em>Thermal Design</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">03</span>Track B &mdash; Operational control</div>
+      <div>
+        <h2>How to run it</h2>
+        <p>
+          Track B is the rapidly growing, operations-side line of work:
+          supervisory control of industrial HVAC and energy-intensive
+          manufacturing facilities. The unit of optimization is the plant in
+          motion &mdash; transient loads, set-point schedules, quality and
+          safety constraints, and the human operators in the loop.
+        </p>
+        <p>
+          The track has moved up a ladder of controller capability. Each rung
+          buys something the rung below it could not represent.
+        </p>
+
+        <div class="ladder">
+          <div class="rung rung-1">
+            <p class="rung-tag">Step 01 &middot; Reactive</p>
+            <h3 class="rung-name">PID</h3>
+            <p>
+              Cheap, robust, ubiquitous on the plant floor. Cannot anticipate
+              load, cannot trade objectives, cannot encode constraints &mdash;
+              but every operator already trusts it. The realistic baseline.
+            </p>
+          </div>
+          <div class="rung rung-2">
+            <p class="rung-tag">Step 02 &middot; Predictive</p>
+            <h3 class="rung-name">MPC</h3>
+            <p>
+              Model-predictive control buys anticipation and explicit
+              constraint handling. Performance is bounded by the model&rsquo;s
+              fidelity to the actual plant; for a desiccant-rotor HVAC
+              calibrated against field data, this rung delivered roughly
+              20% energy savings in our digital-twin study.
+            </p>
+          </div>
+          <div class="rung rung-3">
+            <p class="rung-tag">Step 03 &middot; Reasoning</p>
+            <h3 class="rung-name">AI agent</h3>
+            <p>
+              An LLM-based agent reads plant documentation, reasons over
+              heterogeneous signals, and drives equipment through an ontology
+              layer down to TCP / UDP and the PLC. Hard constraints stay in
+              the lower control layer; the agent handles the parts of
+              supervisory control that previously required an experienced
+              engineer.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          The agent rung is what the program is currently spending most of its
+          time on, in collaboration with battery-manufacturing partners. The
+          interesting questions are not &ldquo;can the agent talk to the
+          PLC&rdquo; &mdash; that is a plumbing problem &mdash; but
+          <em>auditability</em>, <em>constraint enforcement under uncertainty</em>,
+          and <em>the right division of labor</em> between the agent, the MPC
+          underneath it, and the human operator above it. The
+          <a href="/publications/">publications</a> page lists this work under
+          <em>Manufacturing Energy</em> and <em>AI / ML for Engineering</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">04</span>Where they meet</div>
+      <div>
+        <h2>Codesign in practice</h2>
+        <p>
+          The two tracks come together when a project is allowed to vary both
+          geometry and policy. The current portfolio has two ongoing examples
+          of this and several more on the runway.
+        </p>
+
+        <div class="project-grid">
+          <article class="project">
+            <p class="project-meta"><span class="dot"></span>Active &middot; Battery manufacturing</p>
+            <h3>LLM agent &times; HVAC topology</h3>
+            <p>
+              A dry-room HVAC system whose air-handling geometry and
+              supervisory control are jointly evaluated against the same
+              year-of-operation objective. The agent layer determines what the
+              hardware actually has to do; the geometry layer is sized for
+              that, not for a conservative steady-state spec.
+            </p>
+          </article>
+          <article class="project">
+            <p class="project-meta"><span class="dot"></span>Active &middot; Desiccant rotor</p>
+            <h3>Digital twin &times; control policy</h3>
+            <p>
+              A Simulink digital twin of a desiccant-rotor HVAC system, used
+              both as a controller-design environment and as a feedback signal
+              for component-level redesign decisions. Roughly 20% energy
+              savings against the as-built operating policy in the current
+              study.
+            </p>
+          </article>
+        </div>
+
+        <p>
+          On the runway: codesign of electrode-drying lines (where transient
+          model-switching matters more than steady-state efficiency), and
+          topology-optimized heat exchangers whose channel layout is conditioned
+          on the supervisory policy that will run them. The pattern is the
+          same in each case &mdash; let the operating policy and the geometry
+          inform each other from the start.
+        </p>
+
+        <hr class="divider">
+
+        <p class="muted">
+          For the underlying papers, see the
+          <a href="/publications/">publications</a> page. For background and
+          dates, see the <a href="/cv/">CV</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-mark">Younghwan Joo</p>
+      <p class="footer-tagline">Codesign &middot; KIER &middot; UST</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="mailto:yhjoo@kier.re.kr">Email</a></li>
+      <li><a href="https://github.com/yhjoo-kier" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://scholar.google.com/citations?user=2lOiXO4AAAAJ&amp;hl=ko" target="_blank" rel="noopener">Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-4819-9341" target="_blank" rel="noopener">ORCID</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2026 Younghwan Joo. Korea Institute of Energy Research.</p>
+  </div>
+</footer>
+
+</body>
+</html>
