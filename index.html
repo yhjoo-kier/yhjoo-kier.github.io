@@ -49,23 +49,28 @@
       <div class="block-label"><span class="num">01</span>Philosophy</div>
       <div>
         <p class="lede">
-          Most research optimizes either how a system is built or how it is run.
-          I am interested in doing both at once &mdash; treating design and
-          operation as a single coupled optimization problem. I call this
-          <strong>Codesign</strong>.
+          Most research optimizes either how a system is built or how it is
+          run, and uses a different model for each. I am interested in doing
+          the three at once &mdash; treating equipment geometry, operating
+          policy, and the physics-based digital twin that links them as a
+          single coupled problem. I call this <strong>Codesign</strong>.
         </p>
         <p>
           A heat exchanger that is geometrically optimal under nominal load
-          rarely runs at nominal load. A control policy tuned for an off-the-shelf
-          plant rarely uses the plant's actual degrees of freedom. The two
-          choices &mdash; what to build and how to run it &mdash; are usually
-          made by different people, in sequence, and the seam between them is
-          where most of the achievable energy savings disappear.
+          rarely runs at nominal load. A control policy tuned for an
+          off-the-shelf plant rarely uses the plant&rsquo;s actual degrees of
+          freedom. A simulation that captures one of those facts but not the
+          other will make confident, wrong recommendations to both teams. The
+          three choices &mdash; what to build, how to run it, and how to model
+          it &mdash; are usually made by different people, in sequence, and the
+          seams between them are where most of the achievable energy savings
+          disappear.
         </p>
         <p>
-          The work below approaches that seam as the unit of analysis. Equipment
-          geometry, supervisory control, and the model that connects them are
-          designed against the same objective from the start.
+          The work below approaches those seams as the unit of analysis.
+          Equipment geometry, supervisory control, and the physics-based
+          digital twin that links them are designed against the same objective
+          from the start.
         </p>
         <div class="btn-row">
           <a class="btn" href="/research/">Read the long form</a>
@@ -87,9 +92,24 @@
               <p>
                 LLM-based agents that read plant documentation, reason over
                 sensor streams, and drive equipment through an ontology layer
-                down to TCP / UDP and the PLC. The aim is supervisory control
-                that is auditable, constraint-aware, and deployable on real
-                manufacturing lines &mdash; not chatbots over historian data.
+                down to TCP / UDP and the PLC. Each agent is designed and
+                stress-tested against a physics-based digital twin of the
+                target plant before it ever touches hardware &mdash; the goal
+                is supervisory control that is auditable and constraint-aware,
+                not chatbots over historian data.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Physics-based digital twins of industrial plants</h3>
+              <p>
+                First-principles models of energy-consuming equipment and
+                processes &mdash; Simulink, Modelica, CFD-derived reduced-order
+                models, multiscale couplings &mdash; calibrated against field
+                measurements. Built to respond honestly to both a change in
+                geometry and a change in supervisory policy, so design and
+                control can argue on the same evidence.
               </p>
             </div>
           </li>
@@ -99,9 +119,9 @@
               <p>
                 Process-scale modeling and control of energy-intensive
                 operations &mdash; battery electrode drying, industrial HVAC,
-                steel casting. Measurement-driven simulations and energy-based
-                KPIs that let process designs and operating strategies be
-                compared on the same axis.
+                steel casting. Measurement-driven digital twins and
+                energy-based KPIs that let process designs and operating
+                strategies be compared on the same axis.
               </p>
             </div>
           </li>
@@ -160,6 +180,7 @@
       <div>
         <ol class="questions">
           <li><p>When does codesigning equipment and operation actually beat doing them in sequence &mdash; and how do we know in advance, before the hardware is built?</p></li>
+          <li><p>How faithful does a physics-based digital twin need to be before its verdict can replace a real plant in a codesign decision &mdash; and where does the boundary between trustworthy simulation and &ldquo;just run it on hardware&rdquo; actually sit?</p></li>
           <li><p>Can an LLM-based agent be made auditable enough to run an industrial line under hard quality and safety constraints, without humans in the loop on every decision?</p></li>
           <li><p>What is the right interface between an optimal geometry and the policy that will operate it &mdash; a learned model, a reduced-order surrogate, or something the controller itself updates online?</p></li>
           <li><p>How much of energy-intensive manufacturing&rsquo;s waste is structural &mdash; baked into how plants are commissioned &mdash; versus operational, and recoverable through better supervisory control?</p></li>
