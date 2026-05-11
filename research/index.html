@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Research &middot; Younghwan Joo</title>
-  <meta name="description" content="Codesign of energy systems — the thesis, two research tracks (design optimization and operational control), and the projects where they meet.">
+  <meta name="description" content="Research on industrial energy efficiency, AI-driven control of manufacturing systems, and Codesign of thermal-fluid equipment.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,44 +35,22 @@
   <header class="page-header">
     <p class="eyebrow"><span class="num">02</span>Research</p>
     <h1 class="page-title">Codesign of Energy Systems</h1>
-    <p class="page-subtitle">A long-form view of the thesis, the two tracks, and the projects where they meet.</p>
+    <p class="page-subtitle">Overview and three research areas.</p>
   </header>
 
   <section class="block">
     <div class="block-grid">
-      <div class="block-label"><span class="num">01</span>The Codesign thesis</div>
+      <div class="block-label"><span class="num">01</span>Overview</div>
       <div>
         <p class="lede">
-          Equipment design, operating policy, and the physics-based model that
-          links them are usually treated as three separate problems. They are
-          one problem.
-        </p>
-        <p>
-          A heat exchanger is geometrically optimal under a single nominal
-          load. The plant it sits in almost never runs at that load. Most
-          industrial energy systems spend their lives somewhere between
-          off-design points, and the supervisory layer above the equipment
-          spends its life compensating for choices that were locked in years
-          earlier &mdash; usually by a different team, often working from a
-          single steady-state spec sheet.
-        </p>
-        <p>
-          The seams between &ldquo;what to build&rdquo;, &ldquo;how to run
-          it&rdquo;, and &ldquo;how it really behaves&rdquo; are where most of
-          the achievable energy savings disappear. A topology-optimized
-          geometry can be undone by a poorly tuned controller. A skilled MPC
-          can only ever recover a fraction of what a mis-sized component
-          leaves on the table. A digital twin that does not reproduce
-          transient behavior will mislead both of them. Treating any one of
-          these in isolation is locally rational and globally wasteful.
-        </p>
-        <p>
-          <strong>Codesign</strong> is the alternative I work on: equipment
-          geometry, supervisory control policy, and the physics-based digital
-          twin that connects them &mdash; all three optimized against the same
-          objective from the start. It is not a single algorithm; it is a
-          stance about where the design boundary should sit. The three
-          research tracks below are how I explore it.
+          Most research optimizes either how a system is built or how it is
+          operated &mdash; rarely both at once. My research is organized around
+          a different premise: that equipment design and operational control
+          are a coupled problem, and solving them together yields outcomes
+          neither can achieve alone. I call this philosophy
+          <strong>Codesign</strong>. It runs through all three research tracks
+          below &mdash; from topology-optimized hardware, to the simulations
+          that evaluate it, to the AI agents that operate it in the field.
         </p>
       </div>
     </div>
@@ -80,56 +58,17 @@
 
   <section class="block">
     <div class="block-grid">
-      <div class="block-label"><span class="num">02</span>Track A &mdash; Design optimization</div>
+      <div class="block-label"><span class="num">02</span>Area 01 &mdash; AI-driven industrial energy control</div>
       <div>
-        <h2>What to build</h2>
+        <h2>AI-driven industrial energy control</h2>
         <p>
-          Track A is the long-running, geometry-side line of work: topology
-          optimization of thermal systems &mdash; heat sinks, heat exchangers,
-          thermal insulators &mdash; under natural and forced convection,
-          conjugate heat transfer, and multi-objective thermal-structural
-          coupling. The published record on this track goes back to 2015 and
-          is the foundation of the lab&rsquo;s thermal-design competence.
-        </p>
-        <p>
-          This track is now advanced primarily through <strong>student
-          collaboration</strong>. New geometric explorations &mdash; aerogel
-          heat sinks, dual-fluid printed-circuit heat exchangers, thermoelectric
-          modules with phase-change buffers &mdash; are led by graduate students
-          and supervised against the larger Codesign objective: not
-          &ldquo;what is the lowest thermal resistance&rdquo;, but
-          &ldquo;what geometry leaves the operating policy the most room to
-          run efficiently across the realistic load distribution&rdquo;
-          &mdash; evaluated against the physics-based twin of the target
-          plant (Track C), not a single steady-state spec sheet.
-        </p>
-        <p>
-          Methodologically the track contributes the optimization side of the
-          program: density-based topology optimization, shape-dependent
-          convection modeling, deep-learned finite elements, and graph-based
-          convergence acceleration for unstructured meshes. The
-          <a href="/publications/">publications</a> page lists this work under
-          <em>Thermal Design</em>.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="block-grid">
-      <div class="block-label"><span class="num">03</span>Track B &mdash; Operational control</div>
-      <div>
-        <h2>How to run it</h2>
-        <p>
-          Track B is the rapidly growing, operations-side line of work:
-          supervisory control of industrial HVAC and energy-intensive
-          manufacturing facilities. The unit of optimization is the plant in
-          motion &mdash; transient loads, set-point schedules, quality and
-          safety constraints, and the human operators in the loop.
-        </p>
-        <p>
-          The track has moved up a ladder of controller capability. Each rung
-          buys something the rung below it could not represent.
+          The active direction of the program. Industrial facilities &mdash;
+          manufacturing lines, battery dry rooms, large HVAC plants &mdash;
+          are operated today by a hierarchy of low-level controllers and rule
+          books that compensate for design choices locked in years earlier.
+          The work climbs that hierarchy: <strong>PID &rarr; MPC &rarr;
+          LLM-based AI agents</strong>, with each rung buying something the
+          rung below it could not represent.
         </p>
 
         <div class="ladder">
@@ -147,10 +86,10 @@
             <h3 class="rung-name">MPC</h3>
             <p>
               Model-predictive control buys anticipation and explicit
-              constraint handling. Performance is bounded by the model&rsquo;s
-              fidelity to the actual plant; for a desiccant-rotor HVAC
-              calibrated against field data, this rung delivered roughly
-              20% energy savings in our digital-twin study.
+              constraint handling. Performance is bounded by model fidelity;
+              for a desiccant-rotor HVAC calibrated against field data, this
+              rung delivered roughly 20% energy savings in our digital-twin
+              study.
             </p>
           </div>
           <div class="rung rung-3">
@@ -158,28 +97,42 @@
             <h3 class="rung-name">AI agent</h3>
             <p>
               An LLM-based agent reads plant documentation, reasons over
-              heterogeneous signals, and drives equipment through an ontology
-              layer down to TCP / UDP and the PLC. Hard constraints stay in
-              the lower control layer; the agent handles the parts of
-              supervisory control that previously required an experienced
+              heterogeneous signals, and orchestrates the rungs below. Hard
+              constraints stay in the lower control layers; the agent handles
+              supervisory decisions that previously required an experienced
               engineer.
             </p>
           </div>
         </div>
 
         <p>
-          The agent rung is what the program is currently spending most of its
-          time on, in collaboration with battery-manufacturing partners. Each
-          rung &mdash; PID, MPC, and the agent &mdash; is designed and
-          stress-tested against the physics-based digital twin of the target
-          plant (Track C) before any of it touches hardware. The interesting
-          questions are not &ldquo;can the agent talk to the PLC&rdquo;
-          &mdash; that is a plumbing problem &mdash; but
-          <em>auditability</em>, <em>constraint enforcement under uncertainty</em>,
-          and <em>the right division of labor</em> between the agent, the MPC
-          underneath it, and the human operator above it. The
-          <a href="/publications/">publications</a> page lists this work under
-          <em>Manufacturing Energy</em> and <em>AI / ML for Engineering</em>.
+          The core engineering challenge of this area is connecting frontier
+          AI &mdash; large language models &mdash; to physical PLC
+          infrastructure. We do that through a <strong>domain ontology</strong>
+          that gives the agent a vocabulary for the plant&rsquo;s equipment,
+          signals, and constraints, and a thin layer of <strong>real-time
+          communication protocols (TCP / UDP)</strong> that lets the agent
+          observe and command the PLCs that actually move the actuators. The
+          result is supervisory control that is auditable, constraint-aware,
+          and deployable on real lines &mdash; not a chatbot over historian
+          data.
+        </p>
+
+        <p>
+          Underneath the agent stack sits the energy-efficiency work that
+          makes it real: measurement-driven simulations of energy-intensive
+          manufacturing processes (battery electrode drying, steel casting,
+          industrial HVAC) and energy-based key performance indicators that
+          let process designs and operating strategies be compared on the same
+          axis. Without that substrate, an AI agent has nothing honest to
+          optimize against.
+        </p>
+
+        <p class="muted">
+          <strong>Keywords:</strong> LLM agents &middot; MPC &middot; PID
+          &middot; ontologies &middot; TCP / UDP &middot; PLC &middot; battery
+          manufacturing &middot; industrial HVAC &middot; electrode drying
+          &middot; steel casting &middot; energy KPIs.
         </p>
       </div>
     </div>
@@ -187,99 +140,84 @@
 
   <section class="block">
     <div class="block-grid">
-      <div class="block-label"><span class="num">04</span>Track C &mdash; The model in between</div>
+      <div class="block-label"><span class="num">03</span>Area 02 &mdash; Codesign of thermal-fluid systems</div>
       <div>
-        <h2>The substrate Codesign runs on</h2>
+        <h2>Codesign of thermal-fluid systems</h2>
         <p>
-          Codesign needs a model that is honest about both axes. A CAD file
-          does not tell you how a year of operation will play out. A historian
-          database does not tell you what a different geometry would have
-          done. Neither one supports a fair argument across the seam between
-          design and operation.
-        </p>
-        <p>
-          Track C is the work that sits between them: <strong>physics-based
-          digital twins of the target plant</strong> &mdash; first-principles
-          models built in Simulink and Modelica, CFD-derived reduced-order
-          models, and multiscale couplings between component-level dynamics
-          and process-level mass/energy balances. The twins are calibrated
-          against field measurements and held to a standard most simulations
-          are not: they must respond honestly to both a change in geometry
-          <em>and</em> a change in supervisory policy. A twin that only gets
-          the steady state right is not enough for Codesign.
-        </p>
-        <p>
-          Concretely, the desiccant-rotor twin sits here. The multiscale
-          electrode-drying model with state-dependent transient model
-          switching sits here. Each one serves a double role: <em>testbed for
-          the operating policy</em> (the environment Track B controllers learn
-          and are validated against) and <em>feedback signal for component-level
-          redesign</em> (the evidence a Track A geometry change is worth
-          making). The same model is the substrate both tracks share.
-        </p>
-        <p>
-          The methodological questions are model fidelity versus tractability,
-          calibration discipline (what does it mean for a twin to be
-          &ldquo;good enough&rdquo; for a codesign decision), and the right
-          interface between a high-fidelity twin and the surrogate models that
-          the inner optimization loops actually consume. Some of this work
-          appears under <em>Manufacturing Energy</em> on the
-          <a href="/publications/">publications</a> page; some is moving from
-          digital twin into deployable supervisory control on real lines.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="block-grid">
-      <div class="block-label"><span class="num">05</span>Where they meet</div>
-      <div>
-        <h2>Codesign in practice</h2>
-        <p>
-          The three tracks come together when a project is allowed to vary all
-          three at once &mdash; geometry, operating policy, and the model that
-          links them. The current portfolio has two ongoing examples and
-          several more on the runway.
+          Hardware-side work: design and operation of thermal-fluid systems
+          across scales &mdash; from individual components to building-scale
+          energy plants. <strong>Topology optimization</strong> generates
+          non-intuitive geometries for heat sinks, heat exchangers, and
+          thermal insulators under natural and forced convection, conjugate
+          heat transfer, and multi-objective thermal&ndash;structural coupling.
+          This line of work is <strong>ongoing and now advanced primarily
+          through student supervision</strong>; new geometric explorations
+          (aerogel heat sinks, dual-fluid printed-circuit heat exchangers,
+          thermoelectric modules with phase-change buffers) are graduate-student
+          led.
         </p>
 
-        <div class="project-grid">
-          <article class="project">
-            <p class="project-meta"><span class="dot"></span>Active &middot; Battery manufacturing</p>
-            <h3>LLM agent &times; HVAC topology</h3>
-            <p>
-              A dry-room HVAC system whose air-handling geometry, supervisory
-              control, and physics-based twin are co-developed against the
-              same year-of-operation objective. The twin determines what the
-              hardware actually has to do under realistic load; the geometry
-              is sized for that, not for a conservative steady-state spec;
-              the agent is tuned against the same model and never sees
-              hardware until it has passed the twin.
-            </p>
-          </article>
-          <article class="project">
-            <p class="project-meta"><span class="dot"></span>Active &middot; Desiccant rotor</p>
-            <h3>Digital twin &times; control policy</h3>
-            <p>
-              A Simulink digital twin of a desiccant-rotor HVAC system used as
-              the shared substrate for both controller design and
-              component-level redesign decisions. Roughly 20% energy savings
-              against the as-built operating policy in the current study
-              &mdash; the same number Track A and Track B each get to draw on
-              when arguing for a change.
-            </p>
-          </article>
-        </div>
+        <p>
+          The aim of the area is not the geometry alone but the geometry
+          <em>coupled with the operating policy that will run it</em>. A
+          <strong>physics-based digital twin</strong> of the target plant
+          &mdash; Simulink and Modelica plant models, CFD-derived reduced-order
+          models, multiscale process couplings &mdash; sits between hardware
+          and control. The twin is calibrated against field measurements and
+          held to a higher bar than most simulations: it must respond honestly
+          to both a change in geometry and a change in supervisory policy, so
+          a hardware revision and a control revision can be argued on the same
+          evidence. The desiccant-rotor twin and the multiscale electrode-drying
+          model are the current examples.
+        </p>
 
         <p>
           On the runway: codesign of electrode-drying lines, where the
-          transient model-switching done in the twin (Track C) drives both
-          dryer-zone redesign (Track A) and the drying-schedule controller
-          (Track B); and topology-optimized heat exchangers whose channel
-          layout is conditioned on the supervisory policy that will run them.
-          The pattern is the same in each case &mdash; the twin is the shared
-          arena where geometry and policy argue with each other before
-          anything is built.
+          transient model-switching in the twin drives both dryer-zone
+          redesign and the drying-schedule controller; topology-optimized
+          heat exchangers whose channel layout is conditioned on the
+          supervisory policy that will run them.
+        </p>
+
+        <p class="muted">
+          <strong>Keywords:</strong> topology optimization &middot; heat sinks
+          &middot; heat exchangers &middot; thermal insulators &middot; natural
+          and forced convection &middot; digital twin &middot; Simulink &middot;
+          Modelica &middot; reduced-order modeling &middot; codesign.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-grid">
+      <div class="block-label"><span class="num">04</span>Area 03 &mdash; AI / ML for engineering simulation</div>
+      <div>
+        <h2>AI / ML for engineering simulation</h2>
+        <p>
+          Machine-learning methods that accelerate or replace conventional
+          engineering simulations. The work covers <strong>graph neural
+          networks</strong> that accelerate convergence of iterative
+          topology-optimization solvers on unstructured meshes,
+          <strong>deep-learned finite elements</strong> that embed learned
+          shape functions, <strong>surrogate models</strong> for expensive
+          multi-physics analyses, and <strong>deep reinforcement learning</strong>
+          agents that explore large design spaces. The ongoing focus is on
+          methods that generalize across geometries and boundary conditions,
+          so that the design and control loops above can run at a budget that
+          first-principles solvers cannot deliver.
+        </p>
+        <p>
+          This area is the methodological supply line for the other two: it
+          provides the cheap surrogates that the topology-optimization and
+          control loops actually consume, and the convergence-acceleration
+          machinery that makes the inner loops tractable in the first place.
+        </p>
+
+        <p class="muted">
+          <strong>Keywords:</strong> graph neural networks &middot; deep-learned
+          finite elements &middot; surrogate modeling &middot; deep
+          reinforcement learning &middot; convergence acceleration.
         </p>
 
         <hr class="divider">
