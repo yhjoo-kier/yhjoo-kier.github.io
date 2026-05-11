@@ -50,27 +50,25 @@
       <div>
         <p class="lede">
           Most research optimizes either how a system is built or how it is
-          run, and uses a different model for each. I am interested in doing
-          the three at once &mdash; treating equipment geometry, operating
-          policy, and the physics-based digital twin that links them as a
-          single coupled problem. I call this <strong>Codesign</strong>.
+          run, and uses a different model for each. I do the three at once:
+          equipment geometry, operating policy, and the physics-based digital
+          twin that links them, treated as one coupled problem. I call this
+          <strong>Codesign</strong>.
         </p>
         <p>
           A heat exchanger that is geometrically optimal under nominal load
           rarely runs at nominal load. A control policy tuned for an
-          off-the-shelf plant rarely uses the plant&rsquo;s actual degrees of
-          freedom. A simulation that captures one of those facts but not the
-          other will make confident, wrong recommendations to both teams. The
-          three choices &mdash; what to build, how to run it, and how to model
-          it &mdash; are usually made by different people, in sequence, and the
-          seams between them are where most of the achievable energy savings
-          disappear.
+          off-the-shelf plant rarely uses the plant&rsquo;s degrees of freedom.
+          A simulation that captures one of those facts but not the other will
+          make confident, wrong recommendations to both teams. What to build,
+          how to run it, and how to model it: in most labs these are three
+          separate problems with three separate teams, and the seams between
+          them are where most of the achievable energy savings disappear.
         </p>
         <p>
-          The work below approaches those seams as the unit of analysis.
-          Equipment geometry, supervisory control, and the physics-based
-          digital twin that links them are designed against the same objective
-          from the start.
+          The work below approaches those seams as the unit of analysis: a
+          single objective for the geometry, the supervisory control, and the
+          model that links them.
         </p>
         <div class="btn-row">
           <a class="btn" href="/research/">Read the long form</a>
@@ -93,10 +91,10 @@
                 LLM-based agents that read plant documentation, reason over
                 sensor streams, and drive equipment through an ontology layer
                 down to TCP / UDP and the PLC. Each agent is designed and
-                stress-tested against a physics-based digital twin of the
-                target plant before it ever touches hardware &mdash; the goal
-                is supervisory control that is auditable and constraint-aware,
-                not chatbots over historian data.
+                validated against a physics-based digital twin of the target
+                plant before it touches hardware. The aim is auditable
+                supervisory control with explicit constraint handling, not a
+                chatbot over historian data.
               </p>
             </div>
           </li>
@@ -105,9 +103,9 @@
               <h3>Physics-based digital twins of industrial plants</h3>
               <p>
                 First-principles models of energy-consuming equipment and
-                processes &mdash; Simulink, Modelica, CFD-derived reduced-order
-                models, multiscale couplings &mdash; calibrated against field
-                measurements. Built to respond honestly to both a change in
+                processes (Simulink, Modelica, CFD-derived reduced-order
+                models, multiscale couplings), calibrated against field
+                measurements. They have to respond honestly to a change in
                 geometry and a change in supervisory policy, so design and
                 control can argue on the same evidence.
               </p>
@@ -118,10 +116,10 @@
               <h3>Energy efficiency of manufacturing processes</h3>
               <p>
                 Process-scale modeling and control of energy-intensive
-                operations &mdash; battery electrode drying, industrial HVAC,
-                steel casting. Measurement-driven digital twins and
-                energy-based KPIs that let process designs and operating
-                strategies be compared on the same axis.
+                operations: battery electrode drying, industrial HVAC, steel
+                casting. Measurement-driven digital twins and energy-based
+                KPIs that put process designs and operating strategies on the
+                same axis.
               </p>
             </div>
           </li>
@@ -131,8 +129,8 @@
               <p>
                 Topology optimization of heat sinks, heat exchangers, and
                 thermal insulators, paired with the operating policy that will
-                run them. Advanced primarily through student supervision; the
-                long-running track that anchors the &ldquo;what to build&rdquo;
+                run them. The older track in the lab, now advanced primarily
+                through student supervision; the &ldquo;what to build&rdquo;
                 side of Codesign.
               </p>
             </div>
@@ -148,23 +146,23 @@
       <div>
         <div class="project-grid">
           <article class="project">
-            <p class="project-meta"><span class="dot"></span>Active &middot; 2024 &mdash;</p>
+            <p class="project-meta"><span class="dot"></span>Active &middot; 2024 &ndash;</p>
             <h3>LLM-based AI Agent for HVAC Control</h3>
             <p>
               Autonomous supervisory control of HVAC for a battery-manufacturing
-              dry room. The agent layer talks to a domain ontology, which talks
-              to PLCs over TCP / UDP. Quality and safety constraints are
-              enforced explicitly; the LLM reasons over deviations, schedules,
-              and operator intent rather than directly closing the loop.
+              dry room. The agent talks to a domain ontology, which talks to
+              PLCs over TCP / UDP. Quality and safety constraints stay in the
+              lower control layer; the LLM reasons over deviations and operator
+              intent rather than closing the loop directly.
             </p>
           </article>
           <article class="project">
-            <p class="project-meta"><span class="dot"></span>Active &middot; 2023 &mdash;</p>
+            <p class="project-meta"><span class="dot"></span>Active &middot; 2023 &ndash;</p>
             <h3>Digital Twin of a Desiccant Rotor HVAC</h3>
             <p>
-              Simulink-based digital twin of a desiccant-rotor air-handling
-              system, calibrated against field measurements. Used to evaluate
-              control strategies offline; current results show roughly
+              A Simulink digital twin of a desiccant-rotor air-handling system,
+              calibrated against field measurements. The current study evaluates
+              control strategies on the twin and shows roughly
               <strong>20% energy savings</strong> against the as-built
               operating policy.
             </p>
@@ -179,11 +177,11 @@
       <div class="block-label"><span class="num">04</span>Open questions</div>
       <div>
         <ol class="questions">
-          <li><p>When does codesigning equipment and operation actually beat doing them in sequence &mdash; and how do we know in advance, before the hardware is built?</p></li>
-          <li><p>How faithful does a physics-based digital twin need to be before its verdict can replace a real plant in a codesign decision &mdash; and where does the boundary between trustworthy simulation and &ldquo;just run it on hardware&rdquo; actually sit?</p></li>
+          <li><p>When does codesigning equipment and operation beat doing them in sequence, and how do we know in advance, before the hardware is built?</p></li>
+          <li><p>How faithful does a physics-based digital twin need to be before its verdict can replace a real plant in a codesign decision? Where does the boundary between trustworthy simulation and &ldquo;just run it on hardware&rdquo; sit?</p></li>
           <li><p>Can an LLM-based agent be made auditable enough to run an industrial line under hard quality and safety constraints, without humans in the loop on every decision?</p></li>
-          <li><p>What is the right interface between an optimal geometry and the policy that will operate it &mdash; a learned model, a reduced-order surrogate, or something the controller itself updates online?</p></li>
-          <li><p>How much of energy-intensive manufacturing&rsquo;s waste is structural &mdash; baked into how plants are commissioned &mdash; versus operational, and recoverable through better supervisory control?</p></li>
+          <li><p>What is the right interface between an optimal geometry and the policy that will operate it: a learned model, a reduced-order surrogate, or something the controller itself updates online?</p></li>
+          <li><p>How much of energy-intensive manufacturing&rsquo;s waste is structural, baked into how plants are commissioned, versus operational and recoverable through better supervisory control?</p></li>
         </ol>
       </div>
     </div>

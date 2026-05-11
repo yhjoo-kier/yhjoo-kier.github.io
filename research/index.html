@@ -62,13 +62,13 @@
       <div>
         <h2>AI-driven industrial energy control</h2>
         <p>
-          The active direction of the program. Industrial facilities &mdash;
-          manufacturing lines, battery dry rooms, large HVAC plants &mdash;
-          are operated today by a hierarchy of low-level controllers and rule
-          books that compensate for design choices locked in years earlier.
-          The work climbs that hierarchy: <strong>PID &rarr; MPC &rarr;
-          LLM-based AI agents</strong>, with each rung buying something the
-          rung below it could not represent.
+          The active direction of the program. Industrial facilities
+          (manufacturing lines, battery dry rooms, large HVAC plants) run
+          today on a hierarchy of low-level controllers and rule books that
+          compensate for design choices locked in years earlier. The work
+          climbs that hierarchy: <strong>PID &rarr; MPC &rarr; LLM-based AI
+          agents</strong>, with each rung buying something the rung below it
+          could not represent.
         </p>
 
         <div class="ladder">
@@ -76,9 +76,9 @@
             <p class="rung-tag">Step 01 &middot; Reactive</p>
             <h3 class="rung-name">PID</h3>
             <p>
-              Cheap, robust, ubiquitous on the plant floor. Cannot anticipate
-              load, cannot trade objectives, cannot encode constraints &mdash;
-              but every operator already trusts it. The realistic baseline.
+              Cheap, robust, ubiquitous on the plant floor. No anticipation,
+              no explicit constraints, but every operator already trusts it.
+              The realistic baseline.
             </p>
           </div>
           <div class="rung rung-2">
@@ -99,33 +99,30 @@
               An LLM-based agent reads plant documentation, reasons over
               heterogeneous signals, and orchestrates the rungs below. Hard
               constraints stay in the lower control layers; the agent handles
-              supervisory decisions that previously required an experienced
-              engineer.
+              the supervisory decisions that previously required an
+              experienced engineer.
             </p>
           </div>
         </div>
 
         <p>
-          The core engineering challenge of this area is connecting frontier
-          AI &mdash; large language models &mdash; to physical PLC
-          infrastructure. We do that through a <strong>domain ontology</strong>
-          that gives the agent a vocabulary for the plant&rsquo;s equipment,
-          signals, and constraints, and a thin layer of <strong>real-time
-          communication protocols (TCP / UDP)</strong> that lets the agent
-          observe and command the PLCs that actually move the actuators. The
-          result is supervisory control that is auditable, constraint-aware,
-          and deployable on real lines &mdash; not a chatbot over historian
-          data.
+          The engineering challenge of the area is connecting large language
+          models to physical PLC infrastructure. A <strong>domain ontology</strong>
+          gives the agent a vocabulary for the plant&rsquo;s equipment,
+          signals, and constraints. A thin layer of <strong>real-time
+          communication protocols (TCP / UDP)</strong> lets the agent observe
+          and command the PLCs that move the actuators. The result is
+          auditable, constraint-aware supervisory control on a real production
+          line, not a chatbot reading historian data.
         </p>
 
         <p>
-          Underneath the agent stack sits the energy-efficiency work that
-          makes it real: measurement-driven simulations of energy-intensive
-          manufacturing processes (battery electrode drying, steel casting,
-          industrial HVAC) and energy-based key performance indicators that
-          let process designs and operating strategies be compared on the same
-          axis. Without that substrate, an AI agent has nothing honest to
-          optimize against.
+          Underneath the agent sits the energy-efficiency work it depends on:
+          measurement-driven simulations of energy-intensive manufacturing
+          processes (battery electrode drying, steel casting, industrial HVAC)
+          and energy-based key performance indicators that put process designs
+          and operating strategies on the same axis. Without this layer, the
+          agent has nothing honest to optimize against.
         </p>
 
         <p class="muted">
@@ -144,31 +141,29 @@
       <div>
         <h2>Codesign of thermal-fluid systems</h2>
         <p>
-          Hardware-side work: design and operation of thermal-fluid systems
-          across scales &mdash; from individual components to building-scale
-          energy plants. <strong>Topology optimization</strong> generates
-          non-intuitive geometries for heat sinks, heat exchangers, and
-          thermal insulators under natural and forced convection, conjugate
-          heat transfer, and multi-objective thermal&ndash;structural coupling.
-          This line of work is <strong>ongoing and now advanced primarily
-          through student supervision</strong>; new geometric explorations
-          (aerogel heat sinks, dual-fluid printed-circuit heat exchangers,
-          thermoelectric modules with phase-change buffers) are graduate-student
-          led.
+          Hardware-side work: design and operation of thermal-fluid systems at
+          component and plant scale. <strong>Topology optimization</strong>
+          generates non-intuitive geometries for heat sinks, heat exchangers,
+          and thermal insulators under multi-physics constraints (natural and
+          forced convection, conjugate heat transfer, thermal&ndash;structural
+          coupling). This line of work is <strong>ongoing and now advanced
+          primarily through student supervision</strong>; current explorations
+          include aerogel heat sinks, dual-fluid printed-circuit heat
+          exchangers, and thermoelectric modules with phase-change buffers,
+          all graduate-student led.
         </p>
 
         <p>
-          The aim of the area is not the geometry alone but the geometry
-          <em>coupled with the operating policy that will run it</em>. A
-          <strong>physics-based digital twin</strong> of the target plant
-          &mdash; Simulink and Modelica plant models, CFD-derived reduced-order
-          models, multiscale process couplings &mdash; sits between hardware
-          and control. The twin is calibrated against field measurements and
-          held to a higher bar than most simulations: it must respond honestly
-          to both a change in geometry and a change in supervisory policy, so
-          a hardware revision and a control revision can be argued on the same
-          evidence. The desiccant-rotor twin and the multiscale electrode-drying
-          model are the current examples.
+          The aim is the geometry coupled with the operating policy that will
+          run it, not the geometry alone. A <strong>physics-based digital
+          twin</strong> of the target plant sits between hardware and control:
+          Simulink and Modelica plant models, CFD-derived reduced-order
+          models, multiscale process couplings, all calibrated against field
+          measurements. The twin has to respond honestly to a change in
+          geometry and a change in supervisory policy, so a hardware revision
+          and a control revision can be argued on the same evidence. The
+          desiccant-rotor twin and the multiscale electrode-drying model are
+          the current examples.
         </p>
 
         <p>
@@ -196,22 +191,21 @@
         <h2>AI / ML for engineering simulation</h2>
         <p>
           Machine-learning methods that accelerate or replace conventional
-          engineering simulations. The work covers <strong>graph neural
-          networks</strong> that accelerate convergence of iterative
-          topology-optimization solvers on unstructured meshes,
-          <strong>deep-learned finite elements</strong> that embed learned
-          shape functions, <strong>surrogate models</strong> for expensive
-          multi-physics analyses, and <strong>deep reinforcement learning</strong>
-          agents that explore large design spaces. The ongoing focus is on
-          methods that generalize across geometries and boundary conditions,
-          so that the design and control loops above can run at a budget that
-          first-principles solvers cannot deliver.
+          engineering simulations: <strong>graph neural networks</strong> for
+          convergence acceleration of iterative topology-optimization solvers
+          on unstructured meshes, <strong>deep-learned finite elements</strong>
+          that embed learned shape functions, <strong>surrogate models</strong>
+          for expensive multi-physics analyses, and <strong>deep reinforcement
+          learning</strong> agents that explore large design spaces. The
+          ongoing focus is on methods that generalize across geometries and
+          boundary conditions, so the design and control loops above can run
+          at a budget that first-principles solvers cannot deliver.
         </p>
         <p>
-          This area is the methodological supply line for the other two: it
-          provides the cheap surrogates that the topology-optimization and
-          control loops actually consume, and the convergence-acceleration
-          machinery that makes the inner loops tractable in the first place.
+          This area is the methodological supply line for the other two: the
+          cheap surrogates the topology-optimization and control loops consume,
+          and the convergence-acceleration machinery that makes those inner
+          loops tractable.
         </p>
 
         <p class="muted">
